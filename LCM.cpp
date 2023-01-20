@@ -1,31 +1,34 @@
-// Copyright (c) 2022 Zaida Hammel All rights reserved
+// Copyright (c) 2022 Zaida Hammel All rights reserved.
 //
 // Created by: Zaida Hammel
-// Created on: Nov 2022
-// This program determines the lowest common multiple
+// Created on: Dec 2022
+// This program calculates the LCM of two integers
 
 #include <iostream>
-using namespace std;
+
 
 int main() {
-    int num1, num2, maxValue;
+    int integer1;
+    int integer2;
+    int max;
 
-    cout << "Enter two numbers: " << endl;
-    cin >> num1 >> num2;
+    std::cout << "Enter your first integer: ";
+    std::cin >> integer1;
 
-    maxValue = (num1 > num2) ? num1 : num2;
+    std::cout << "\nEnter your second integer: ";
+    std::cin >> integer2;
 
-    while (1) {
-        // condition of LCM
-        if ((maxValue % num1 == 0) && (maxValue % num2 == 0)) {
-            cout << "LCM: " << maxValue << endl;
+    // maximum value between n1 and n2 is stored in max
+    max = (integer1 > integer2) ? integer1 : integer2;
+
+    do {
+        if (max % integer1 == 0 && max % integer2 == 0) {
+            std::cout << "\nThe LCM of those two numbers are: " << max;
             break;
+        } else {
+            ++max;
         }
-        ++maxValue;
-    }
+    } while (true);
+
     return 0;
-
-    std::cout << std::endl;
-
-    std::cout << "\nDone." << std::endl;
 }
